@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live YouTube Video + Chat + MCQ</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <iframe id="youtubePlayer" src="https://www.youtube.com/embed/k_SH_TLc89A?autoplay=0&mute=1" allowfullscreen></iframe>
+        
+        <div id="chat-container">
+            <h3>Live Chat</h3>
+            <div id="chatMessages"></div>
+            <div id="answerFeedback"></div>
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button id="sendMessageBtn">Send</button>
+        </div>
+    </div>
+
+    <div id="mcq-container">
+        <h3>Live MCQs</h3>
+        <div id="questionList1"></div>
+        <div id="answerFeedback1"></div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel">
+        <h3>Admin: Add MCQ</h3>
+        <input type="text" id="questionInput" placeholder="Enter Question">
+        <div id="optionsContainer">
+            <input type="text" placeholder="Option 1">
+        </div>
+        <button id="addOptionBtn">Add Option</button>
+        <div id="correctOptionsContainer">
+            <label>Select correct answer(s):</label>
+        </div>
+        <button id="submitQuestionBtn">Submit Question</button>
+        <p id="broadcastStatus"></p>
+    </div>
+
+    <!-- Paho MQTT Client Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
